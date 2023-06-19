@@ -37,5 +37,10 @@
     </ul>
   </p>
 
+ <h2> Challenges Faced</h2>
+<p></p>During the development of this solution, several challenges were encountered. One of the main challenges was the accuracy and structure of the extracted information from the Adobe PDF Extract API. The API's extraction process sometimes resulted in inaccuracies, such as combining the customer's name and email address or placing the date before or after the address.
+<br><br>
+These inaccuracies posed a significant challenge in accurately extracting the required information and mapping it to the correct fields. It required careful analysis and handling of the extracted data to ensure that the final output maintained accuracy and integrity.</p><hr>
+
 ![image](https://github.com/Pranay-Pandey/Adobe-Invoice-Info-extraction/assets/79053599/3a2fc3bd-3882-444c-9b52-254f82e45ce4)
 
