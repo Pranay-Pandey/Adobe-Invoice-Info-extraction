@@ -36,4 +36,6 @@
       <li>process: This method encapsulates the other small methods for extraction of the information from the files. We can pass parameters such as save_csv, delete_files_after_processing and save_pdf_file_name from this method.</li>
     </ul>
   </p>
-![image](https://github.com/Pranay-Pandey/Adobe-Invoice-Info-extraction/assets/79053599/3aba3665-d5d3-4dff-8494-7c2ece30a404)
+
+![image](https://github.com/Pranay-Pandey/Adobe-Invoice-Info-extraction/assets/79053599/3a2fc3bd-3882-444c-9b52-254f82e45ce4)
+
