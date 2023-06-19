@@ -318,7 +318,7 @@ class PDFProcessor:
                 if "Invoice" in block['Text']:
                     extracted_data['Invoice__Number'] = block['Text'].split(" ")[1]
                     if block['Text'].split(" ")[1]=='' or block['Text'].split(" ")[1]==' ':
-                        extracted_data['Invoice__Number'] = data['elements'][i+1]['Text']
+                        extracted_data['Invoice__Number'] = self.fragmented_text(data['elements'][i+1]['Text'])[0]
 
                 self.check_for_date(self.fragmented_text(block['Text']), extracted_data)
                 if loc == '//Document/Sect/Title' or extracted_data['Bussiness__Name'] in block['Text']:
