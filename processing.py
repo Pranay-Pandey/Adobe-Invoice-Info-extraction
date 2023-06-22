@@ -5,6 +5,7 @@ import zipfile
 import pandas as pd
 from extract_pdf import extract_text_and_table_info
 
+
 class PDFProcessor:
     def __init__(self, working_directory):
         self.working_directory = working_directory # The directory where the pdfs are located
@@ -327,8 +328,9 @@ class PDFProcessor:
 
             index_scanned = i
             table_started_flag = False
+            begin = 5
 
-            for i in range(0, len(data['elements'])):
+            for i in range(begin, len(data['elements'])):
 
                 block = data['elements'][i]
                 loc = block['Path']

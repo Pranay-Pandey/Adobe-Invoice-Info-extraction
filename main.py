@@ -1,17 +1,20 @@
 from processing import *
 
-# running the main function for a file
-working_directory = r'Procedure\Extractions'
-pdf_processor = PDFProcessor(working_directory)
+# Initialize PDFProcessor object
+pdf_processor = PDFProcessor(working_directory='Extractions')
 
-pdf_file_loc = r'InvoicesData\TestDataSet\output0.pdf'
-df1 = pdf_processor.process(pdf_file_loc, save_csv=False, 
-                            delete_files_after_processing=True, save_pdf_file_name=False)
+# Process the first PDF file and create a pandas DataFrame
+pdf_file_path = 'TestDataSet/output80.pdf'
+df = pdf_processor.process(pdf_file_path, save_csv=False,
+                           delete_files_after_processing=True,
+                           save_pdf_file_name=False)
 
+# Process remaining PDF files and concatenate their extracted data to the first DataFrame
 for i in range(1, 100):
-    pdf_file_loc = r'InvoicesData\TestDataSet\output' + str(i) + '.pdf'
-    df2 = pdf_processor.process(pdf_file_loc, False)
-    df1 = pd.concat([df2, df1], axis=0)
-    print(i)
+    pdf_file_path = fr'InvoicesData/TestDataSet/output{i}.pdf'
+    df_temp = pdf_processor.process(pdf_file_path, save_csv=False)
+    df = pd.concat([df, df_temp], axis=0)
 
-df1.to_csv(r'Procedure\Extractions\extracted_data.csv', index=False)
+# Save the final DataFrame as a CSV file in the working directory
+csv_file_path = r'Extractions/extracted_data.csv'
+df.to_csv(csv_file_path, index=False)
