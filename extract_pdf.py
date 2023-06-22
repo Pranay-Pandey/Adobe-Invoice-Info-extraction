@@ -17,7 +17,7 @@ def extract_text_and_table_info(pdf_file_location, output_file_location):
         
         # Initial setup, create credentials instance.
         credentials = Credentials.service_account_credentials_builder() \
-            .from_file("adobe-dc-pdf-services-sdk-python-samples\pdfservices-api-credentials.json") \
+            .from_file(base_path + "/pdfservices-api-credentials.json") \
             .build()
         
         # Create an ExecutionContext using credentials and create a new operation instance.
